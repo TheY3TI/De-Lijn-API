@@ -18,6 +18,6 @@ doorkomsten_info = ast.literal_eval(doorkomsten_info_response_body.replace("null
 
 Lijnen = doorkomsten_info['lijnen'] #Lijnen is een list die dictionaries bevat met de info over vertrekkende verbindingen in HALTE
 
-print halte_info['omschrijvingLang']
+print '\033[91mDoorkomsten voor ', halte_info['omschrijvingLang'], ' - Huidige tijd: ',doorkomsten_info['huidigeTijd'],'\033[0m'
 for i in range(0, len(Lijnen)):
-        print Lijnen[i]['vertrekTijd'], ' - ', Lijnen[i]['lijnNummer'], ' - ', Lijnen[i]['bestemming']
+        print '\033[1m',Lijnen[i]['vertrekTijd'], '\033[0m - ', Lijnen[i]['lijnNummerPubliek'], ' - ', Lijnen[i]['bestemming']
