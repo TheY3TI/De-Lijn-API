@@ -8,7 +8,7 @@ from urllib2 import Request, urlopen
 HALTE = 109044
 AANTAL_RESULTATEN = 10
 
-halte_info_request = Request('https://www.delijn.be/rise-api-core/haltes/titel/109044')
+halte_info_request = Request('https://www.delijn.be/rise-api-core/haltes/titel/{halte}'.format(halte=HALTE))
 halte_info_response_body = urlopen(halte_info_request).read()
 halte_info = ast.literal_eval(halte_info_response_body.replace("null", "None")) #halte_info is een dict die alle informatie bevat over HALTE
 
